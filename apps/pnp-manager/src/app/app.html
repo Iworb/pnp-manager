@@ -1,2 +1,14 @@
-<app-nx-welcome></app-nx-welcome>
-<router-outlet></router-outlet>
+<div class="container">
+  <p-toolbar>
+    <ng-template #start>
+      @for (project of projectsStore.openedProjects(); track project.name) {
+      <div>{{ project.name + (project.isModified ? '*' : '') }}</div>
+      }
+      <p-button (onClick)="projectsStore.createProject()">Create</p-button>
+      <p-button>Open</p-button>
+    </ng-template>
+  </p-toolbar>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
