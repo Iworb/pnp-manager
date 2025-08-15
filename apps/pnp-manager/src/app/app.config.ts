@@ -22,6 +22,9 @@ export const appConfig: ApplicationConfig = {
     providePrimeNG({
       theme: {
         preset: Themes.Aura,
+        options: {
+          darkModeSelector: '.my-app-dark',
+        },
       },
     }),
     provideRouter(appRoutes),

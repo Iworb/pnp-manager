@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "build": "npx nx build pnp-manager",
-    "serve": "npx nx serve pnp-manager"
+    "e2e": "npx nx e2e pnp-manager",
+    "serve": "npx nx serve pnp-manager",
+    "test": "npx nx test pnp-manager"
   },
   "private": true,
   "dependencies": {

@@ -26,6 +26,8 @@ export const ThemeStore = signalStore(
       const newTheme =
         store.currentTheme() === Themes.Aura ? Themes.Noir : Themes.Aura;
       patchState(store, () => ({ currentTheme: newTheme }));
+      const element = document.querySelector('html');
+      element?.classList?.toggle('my-app-dark');
       usePreset(newTheme);
     },
   }))
