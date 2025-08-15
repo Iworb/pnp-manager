@@ -1,14 +1,6 @@
-<div class="container">
-  <p-toolbar>
-    <ng-template #start>
-      @for (project of projectsStore.openedProjects(); track project.name) {
-      <div>{{ project.name + (project.isModified ? '*' : '') }}</div>
-      }
-      <p-button (onClick)="projectsStore.createProject()">Create</p-button>
-      <p-button>Open</p-button>
-    </ng-template>
-  </p-toolbar>
-  <div class="content">
+<div class="flex flex-col w-full h-full">
+  <pnp-appbar class="shrink-0"></pnp-appbar>
+  <div class="flex-1">
     <router-outlet></router-outlet>
   </div>
 </div>

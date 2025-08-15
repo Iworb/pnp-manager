@@ -1,0 +1,36 @@
+<ng-container *transloco="let t; prefix: 'pnp.components.appbar'">
+  <p-toolbar>
+    <ng-template #start>
+      <div class="flex items-center gap-2">
+        <p-button
+          icon="pi pi-folder"
+          [ariaLabel]="t('open')"
+          severity="secondary"
+          size="small"
+        ></p-button>
+        <p-button
+          icon="pi pi-plus"
+          (onClick)="projectsStore.createProject()"
+          [ariaLabel]="t('create')"
+          severity="secondary"
+          size="small"
+        ></p-button>
+      </div>
+      @for (project of projectsStore.openedProjects(); track project.name) {
+      <div>{{ project.name + (project.isModified ? '*' : '') }}</div>
+      }
+    </ng-template>
+    <ng-template #end>
+      <div class="flex items-center gap-2">
+        <p-button
+          (onClick)="transloco.setActiveLang(transloco.getActiveLang() === 'en' ? 'ru' : 'en')"
+        >
+          {{ transloco.getActiveLang() }}
+        </p-button>
+        <p-button
+          icon="pi pi-palette"
+          (onClick)="themeStore.changeTheme()"
+        ></p-button></div
+    ></ng-template>
+  </p-toolbar>
+</ng-container>

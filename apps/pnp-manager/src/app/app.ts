@@ -1,15 +1,11 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ButtonModule } from 'primeng/button';
-import { ToolbarModule } from 'primeng/toolbar';
-import { ProjectStore } from './features/project/project.store';
+import { Appbar } from './components/appbar/appbar';
 
 @Component({
-  imports: [ButtonModule, ToolbarModule, RouterModule],
-  selector: 'app-root',
+  imports: [RouterModule, Appbar],
+  selector: 'pnp-root',
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {
-  projectsStore = inject(ProjectStore);
-}
+export class App {}

@@ -1,0 +1,12 @@
+{
+  "common": {},
+  "enums": {},
+  "pnp": {
+    "components": {
+      "appbar": {
+        "create": "Создать проект",
+        "open": "Открыть проект"
+      }
+    }
+  }
+}
